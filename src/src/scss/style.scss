@@ -1,0 +1,669 @@
+@import "fonts";
+@import "normalize";
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "OpenSans-Regular", "sans-serif";
+    font-family: 400;
+    font-size: 16px;
+    overflow-x: hidden; 
+    min-height: 320px; 
+    color: #000000;
+    max-width: 1920px;
+    margin: 0 auto; 
+  }
+  
+  *,*::before, *::after{
+    box-sizing: inherit;
+  }
+  
+  a{
+    text-decoration: none;
+    color: inherit;  
+    display: inline-block;
+  }
+  
+  ul,
+  li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  h1, h2, h3, h4, h5, h6{
+    margin: 0; 
+  }
+  p{
+    margin: 0;
+  }
+  .container{
+    max-width: 1000px;   
+    margin: 0 auto;
+    padding: 0px 20px; 
+  }
+  .container__header,
+  .container__footer{
+    max-width: 1328px;   
+    margin: 0 auto;
+    padding: 0px 24px; 
+  }
+
+  $black: #000000;
+  $white: #FFFFFF;
+  $blue:#004685;
+  $red: #D30531;
+  $grey: #00000075;
+  $hoverText:#569DDC;
+  $bgFooter:#00468533;
+
+
+@mixin flexBox ($d , $j) {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin fontSRegul ($c,$lineH,) {
+  font-family: "OpenSans-Regular", "sans-serif";
+  font-weight: 400;
+  color: $c;
+  line-height: $lineH;
+}
+@mixin fontSBold ($c,$lineH) {
+  font-family: "OpenSans-SemiBold", "sans-serif";
+  font-weight: 600;
+  color: $c;
+  line-height: $lineH;
+}
+
+@mixin fontEBold ($c,$lineH) {
+  font-family: "OpenSans-ExtraBold", "sans-serif";
+  font-weight: 800;
+  color: $c;
+  line-height: $lineH;
+}
+/* header start */
+.header{
+  max-width: 1920px;
+  position: fixed;
+  width: 100%;
+  top: 37px;
+  left:50%;
+  transform:translate(-50%, -50%);
+  background:$white;
+  border-bottom: 1px solid rgba($color: $blue, $alpha: 0.2);
+  &__wraper{
+  @include flexBox(flex,space-between);
+  height: 60px;
+  margin-bottom: 15px;
+  }
+  &__btn{
+    opacity: 1;
+    margin: 23px 9px 6px 9px;
+    cursor: pointer;
+    z-index: 1;
+    transition: 0.5s;
+  }
+  &__btn:hover &__btn-line{
+   background:#569DDC;
+  }
+
+  &__btn-line{
+    background: $blue;
+    border-radius: 3px;
+    height: 3px;
+    width: 30px;
+    margin: 1px 0 7px;
+  }
+  &__menu{
+    position: relative;
+  }
+  &__cross{
+    position: absolute;
+    top: -5px;
+    left: 9px;
+    cursor: pointer;
+    padding: 10px 10px 10px 0;
+    height: 4px;
+    width: 18px;
+  }
+  &__cross:hover &__cross-line{
+    background:#569DDC;
+   }
+  &__cross-line-1,
+  &__cross-line-2{
+    position: absolute;
+    background: $blue;
+    border-radius: 3px;
+    height: 3px;
+    width: 30px;
+    margin: 1px 0 7px;
+  }
+
+/* openClose start */
+  &__cross.header__cross-active{
+    top: 22px;
+  }
+  &__cross-line-1{
+    opacity: 0;
+    transform:rotate(360deg);
+  }
+  &__cross-line-2{
+    opacity: 0;
+    transform:rotate(360deg);
+  }
+  &__cross-active &__cross-line-1{
+    opacity: 1;
+    transform:rotate(43deg);
+    transition: 0.5s;
+  }
+  &__cross-active &__cross-line-2{
+    opacity: 1;
+    transform:rotate(317deg);
+    transition: 0.5s;
+  }
+  &__btn-active{
+    opacity: 0;
+  }
+/* openClose end */
+  &__logo{
+    margin-top: 11px;
+  }
+
+  &__help{
+    position: relative;
+    margin: 10px 0;
+  }
+  &__question{
+    position:relative;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  &__question:hover &__circle{
+    stroke: $hoverText;
+  }
+  &__question:hover &__ques{
+    fill: $hoverText;
+  }
+  &__support{
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+    width: 241px;
+    height: 152px;
+    background: $white;
+    top: 40px;
+    right: -8px;
+    box-shadow: 0px 3px 14px #00000033;
+  }
+  &__box{
+    margin-top: -3px;
+    margin-left: 200px;
+    width: 15px;
+    height: 15px;
+    background: $white;
+    transform:rotate(44deg);
+  }
+  &__text{
+    @include fontSRegul ( $black , 24px);
+    font-size: 16px;
+    text-align: center;
+  }
+  &__num{
+    @include fontSBold ($black, 38px);
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  &__write{
+    @include fontSBold ($black, 22px);
+    font-size: 16px;
+    color: $blue;
+    text-align: center;
+  }
+  &__write a {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  &__write-2{
+    display: none;
+    color: $hoverText;
+  }
+  &__support.header__support-active{
+    visibility: inherit;
+    opacity: 1;
+    transition: 1s;
+  }
+
+  &__write-1.header__write-active-1{
+    display: none;
+  }
+  &__write-2.header__write-active-2{
+    display: block;
+  }
+
+} 
+/* header end*/
+/* nav start*/
+.nav{
+  position: absolute;
+  height: 733px;
+  border-top: 1px solid rgba($color: $blue, $alpha: 0.1);
+  box-shadow: 0px 3px 12px #00000029;
+  transform: translateX(-150%);
+  transition: 0.5s;
+  &-active{
+    transform: translateX(0%);
+    transition: all 0.5s;
+  }
+  &__list{
+    padding-left: 20px;
+    width: 280px;
+    background: rgba($color: $white, $alpha: 0.95);
+    height: 100%;
+  }
+  &__item{
+    @include fontSRegul($blue, 22px);
+    font-size: 16px;
+  }  
+  &__item a{
+    text-decoration: underline;
+  }
+  &__item a:hover{
+    color: $hoverText;
+  }
+  &__title{
+    @include fontSBold($black, 24px);
+    font-size: 16px;
+    padding-bottom:18px;
+  }
+  &__title:nth-child(1){
+    padding-top:21px;
+  }
+  &__title:nth-child(3){
+    padding-top:41px;
+  }
+  &__item:nth-child(4),
+  &__item:nth-child(5),
+  &__item:nth-child(6){
+    margin-bottom: 22px;
+  }
+}
+/* nav end*/
+.indent{
+  padding-top: 75px;
+}
+/* main start*/
+.main{
+  background-image: url(../img/main__bg.png);
+  background-position: top center;
+  background-size: cover;
+  
+  height: 428px;
+  &__titel{
+    padding-top: 89px;
+    @include fontSBold($white, 49px);
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+  &__search{
+    @include flexBox(flex, space-between);
+    align-items: center;
+  }
+  &__input{
+    @include fontSRegul( $grey , 22px );
+    font-size: 16px;
+    max-width: 800px;
+    width: 100%;
+    height: 60px;
+    border: none;
+    border-radius: 8px;
+    padding: 0 24px;
+  }
+  &__btn{
+    @include fontSBold($white, 33px);
+    font-size: 24px;
+    width: 142px;
+    background-color: $red;
+    text-align: center;
+    border-radius: 8px;
+    margin-left: 18px;
+  }
+  &__btn:hover{
+    background-color: #E1133F;
+  }
+  &__btn a{
+    padding: 14px 32px 13px 32px;
+  }
+  &__text{
+    @include fontSRegul( $white , 22px );
+    font-size: 16px;
+    margin-top: 12px
+  }
+}
+/* main end*/
+
+/* pay start*/
+.pay{
+  &__wraper{
+    max-width: 534px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  &__titel{
+    @include fontSBold( $black , 49px );
+    font-size: 36px;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 16px;
+  }
+  &__list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 70px;
+  }
+  &__item{
+    @include fontSRegul( $blue , 30px );
+    font-size: 20px;
+    text-align: center;
+    margin-right: 28px;
+  }
+  &__item:nth-child(2){
+    margin-bottom: 16px;
+  }
+  &__item:nth-child(3),
+  &__item:nth-child(4){
+    margin-right: 0;
+  }
+  &__item a {
+    border-bottom: 1px dashed $blue;
+  }
+  &__item a:hover{
+    color: $hoverText;
+    border-bottom: 1px dashed $hoverText;
+  }
+  &__item p{
+    display: inline;
+    color: $black;
+    margin-left: 28px;
+  }
+
+}
+
+.pay__mob{
+  &-text{
+    @include fontSBold($black, 27px);
+    font-size: 20px;
+    margin-top: 28px;
+    margin-bottom: 17px;
+    text-align: center;
+  }
+
+}
+/* pay end*/
+
+/* fine star*/
+.fine{
+  &__anchor{
+    position: absolute;
+    margin-top: 600px;
+    width: 1200px;
+  }
+  border-bottom: 1px solid rgba(0,70,133,.2);
+  &__content{
+    margin-right: 20px;
+  }
+  &__wraper{
+    @include flexBox(flex,space-between);
+    margin-bottom: 60px;
+  }
+  &__title{
+    @include fontSBold( $black ,  32px);
+    font-size: 25px;
+    margin-bottom: 22px;
+  }
+  &__text{
+    max-width: 600px;
+    width: 100%;
+    @include fontSRegul( $black, 24px );
+    font-size: 16px;
+  }
+  &__subtitlr{
+    @include fontSBold( $red, 24px);
+    font-size: 16px;
+    margin-top: 35px;
+  }
+}
+/* fine end*/
+
+/* fine star*/
+.arrears{
+  border-bottom: 1px solid rgba(0,70,133,.2);
+  &__pic{
+    margin-right: 40px;
+  }
+  &__content{
+    margin-right: 20px;
+  }
+  &__wraper{
+    @include flexBox(flex,space-between);
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  &__title{
+    @include fontSBold( $black ,  32px);
+    font-size: 25px;
+    margin-bottom: 22px;
+  }
+  &__text{
+    max-width: 600px;
+    width: 100%;
+    @include fontSRegul( $black, 24px );
+    font-size: 16px;
+  }
+  &__subtitlr{
+    @include fontSBold( $red, 24px);
+    font-size: 16px;
+    margin-top: 35px;
+  }
+}
+/* fine end*/
+/* tax start*/
+.tax{
+  border-bottom: 1px solid rgba(0,70,133,.2);
+  &__content{
+    margin-right: 20px;
+  }
+  &__wraper{
+    @include flexBox(flex,space-between);
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  &__title{
+    @include fontSBold( $black ,  32px);
+    font-size: 25px;
+    margin-bottom: 22px;
+  }
+  &__text{
+    max-width: 600px;
+    width: 100%;
+    @include fontSRegul( $black, 24px );
+    font-size: 16px;
+  }
+  &__subtitlr{
+    @include fontSBold( $red, 24px);
+    font-size: 16px;
+    margin-top: 35px;
+  }
+}
+/* tax start*/
+/* services start*/
+.services{
+  &__pic{
+    margin-right: 40px;
+  }
+  &__content{
+    margin-right: 20px;
+  }
+  &__wraper{
+    @include flexBox(flex,space-between);
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  &__title{
+    @include fontSBold( $black ,  32px);
+    font-size: 25px;
+    margin-bottom: 22px;
+  }
+  &__text{
+    max-width: 600px;
+    width: 100%;
+    @include fontSRegul( $black, 24px );
+    font-size: 16px;
+  }
+  &__subtitlr{
+    @include fontSBold( $red, 24px);
+    font-size: 16px;
+    margin-top: 35px;
+  }
+}
+/* services end*/
+
+/* cooperation start*/
+.cooperation{
+  &__title{
+    @include fontSBold( $black , 49px );
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 53px;
+  }
+  &__wraper{
+    @include flexBox(flex, space-between);
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+  &__pic{
+    width: 160px;
+    text-align: center;
+  }
+  &__text{
+    @include fontSBold( $black , 16px );
+    font-size: 12px;
+  }
+}
+/* cooperation end*/
+
+/* footer start*/
+.footer{
+  background:$bgFooter;
+  &__wraper{
+    @include flexBox( flex, space-between );
+    height: 124px;
+    align-items: center;
+  }
+  &__text{
+    @include fontSBold( $black , 22px );
+    font-size: 16px;
+  }
+}
+/* footer end*/
+
+/* popup start*/
+.modal{
+  display: block;
+  &-hidden{
+    display: none;
+  }
+  &__bg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: #000000CC, $alpha: 0.7) ;
+    z-index: 2;
+  }
+  &__window{
+    position: relative;
+    height: 468px;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 120px;
+    background:$white;
+  }
+  &__close{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+  }
+  &__wraper{
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto
+  }
+
+  &__title{
+    @include fontSBold($black, 24px);
+    font-size: 16px;
+    padding-top: 40px;
+    margin-bottom: 32px;
+  }
+  &__login{
+    margin-bottom: 16px;
+  }
+  &__password{
+    margin-bottom: 23px;
+  }
+  &__login,
+  &__password{
+    max-width: 268px;
+    width: 100%;
+    padding: 0 24px;
+    height: 54px;
+    border: 2px solid #00468533;
+    border-radius: 8px;
+  }
+  &__btn a{
+    width: 256px;
+    padding: 13px 32px;
+  }
+  &__btn{
+    @include fontSBold($white, 33px);
+    font-size: 24px;
+    width: 320px;
+    height: 60px;
+    background-color: #d30531;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 32px;
+    cursor: pointer;
+  }
+  &__btn:hover{
+    background-color: #E1133F;
+  }
+  &__text{
+    @include fontSRegul($blue, 24px);
+    font-size: 16px;
+    border-bottom: 1px dashed $blue;
+  }
+  &__text-1{
+    width: 151px;
+    margin-bottom: 16px;
+  }
+  &__text-2{
+    width: 98px;
+  }
+  &__text:hover{
+    color:$hoverText;
+    border-bottom: 1px dashed $hoverText;
+  }
+  &__path:hover{
+    fill:$hoverText;
+  }
+}
+/* popup end*/
