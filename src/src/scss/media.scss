@@ -1,0 +1,397 @@
+@media(min-width:500px){
+    .main__mob{
+        display: none;
+    }
+    .pay__mob{
+        display: none;
+    }
+    .tab__btn svg{
+        display: none;
+    }
+}
+
+@media(max-width: 1000px){
+    .cooperation__wraper{
+        width: 639px;
+        margin: 0 auto;
+    }
+    .cooperation__pic{
+        margin-bottom: 32px;
+        width: 170px;
+    }
+}
+
+@media (max-width: 900px){
+    .fine__subtitlr,
+    .arrears__subtitlr,
+    .tax__subtitlr,
+    .services__subtitlr{
+        margin-top: 12px;
+    }
+
+}
+@media (max-width: 800px){
+    .fine__wraper,
+    .tax__wraper,
+    .services__wraper{
+        display: block;
+    }
+    .arrears__wraper,
+    .services__wraper{
+        display: table;
+        margin: 0 auto;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+    .arrears__content,
+    .services__content{
+        display:table-header-group;
+    }
+
+    .fine__content,
+    .arrears__content,
+    .tax__content,
+    .services__content{
+        max-width: 500px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .arrears__title, 
+    .fine__title, 
+    .services__title, 
+    .tax__title{
+        text-align: center;
+    }
+    .arrears__text, 
+    .fine__text, 
+    .services__text, 
+    .tax__text{
+        text-align: center;
+    }
+    .arrears__subtitlr, 
+    .fine__subtitlr, 
+    .services__subtitlr, 
+    .tax__subtitlr {
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+    }
+    .fine__pic,
+    .arrears__pic,
+    .services__pic,
+    .tax__pic{
+        width: 320px;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+
+}
+@media(max-width: 700px){
+    .cooperation__wraper{
+        width: auto;
+        
+    }
+}
+@media (max-width: 600px){
+    .pay__item {
+        font-size: 16px;
+    }
+    .pay__titel{
+        font-size: 32px;
+    }
+}
+
+@media(max-width:500px){
+    .header{
+        z-index: 1;
+    }
+    
+    .header__question{
+        display: none;
+    }
+    .header__support{
+        display: none;
+    }
+
+    .header__menu{
+        order: 2;
+    }
+    .container__header{
+        padding: 0 11px;
+    }
+    .nav__list {
+        width: 268px;
+    }
+    .nav {
+        position: absolute;
+        right: -730px;
+    }
+    .nav-active {
+        right: 0;
+    }
+    .main {
+        height: 300px;
+    }
+    .main__titel{
+        padding-top: 60px;
+        font-size: 20px;
+        text-align: center;
+    }
+    .main__btn{
+        display: none;
+    }
+    .main__text {
+        font-size: 14px;
+        max-width: 363px;
+        width: 100%
+    }
+    .main__input{
+        position: relative;
+        height: 48px;
+        padding: 0 12px;
+    }
+    .main__mob{
+        display: block;
+        position: absolute;
+        right: 31px;
+        top: 214px;
+    }
+    .main__icon:hover{
+        fill: #569DDC;
+    }
+    .pay{
+        display: none;
+    }
+    .pay__mob{
+        display: block;
+    }
+
+    .fine__pic,
+    .arrears__pic,
+    .services__pic,
+    .tax__pic{
+        display: none;
+    }
+    
+    .arrears__title, .fine__title, 
+    .services__title, .tax__title {
+        text-align: start;
+        margin-bottom: 0px;
+        color: #004685 ;
+        font-size: 16px;
+        border-bottom: 1px dashed #004685;
+    }
+    
+    .tab__btn-active .fine__title{
+        color: #569ddc;
+        border-bottom: 1px dashed #569ddc;
+    }
+    .tab__btn-active svg path{
+        fill:#569ddc;
+    }
+    .tab__dropdown-arrow{
+        position: absolute;
+        right: 40px;
+    }
+    .tab__btn-active .tab__dropdown-arrow{
+        transform: rotate(180deg);
+        transition: 0.3s;
+    }
+    .tab__btn-active .arrears__title{
+        color: #569ddc;
+        border-bottom: 1px dashed #569ddc;
+    }
+    .tab__btn-active .services__title{
+        color: #569ddc;
+        border-bottom: 1px dashed #569ddc;
+    }
+    .tab__btn-active .tax__title{
+        color: #569ddc;
+        border-bottom: 1px dashed #569ddc;
+    }
+
+
+    .arrears__text, .fine__text, 
+    .services__text, .tax__text {
+        text-align: start;
+    }
+    .arrears__subtitlr, .fine__subtitlr, 
+    .services__subtitlr, .tax__subtitlr {
+        text-align: start;
+    }
+
+    .tab__content{
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        /* display: none; */
+    }
+    .tab__content-active{
+        position:inherit;
+        visibility: inherit;
+        opacity: 1;
+        transition: 2s;
+        /* display: block; */
+    }
+    .arrears__wraper, 
+    .services__wraper{
+        margin-left: 0;
+    }
+
+    .fine__wraper,
+    .tax__wraper,
+    .arrears__wraper, 
+    .services__wraper{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .tab__content{
+        margin-top: 17px;
+    }
+    .tab__btn {
+        display: flex;
+        align-items: center;
+    }
+    .tab__btn svg{
+        margin-right: 10px;
+    }
+    .services{
+        border-bottom: 1px solid rgba(0,70,133,.2);
+    }
+    .cooperation__title{
+        margin-top: 28px;
+    }
+    .cooperation__title{
+        font-size: 20px;
+        margin-bottom: 27px;
+    }
+    .footer__wraper{
+        display: block;
+
+    }
+    .footer__text{
+        font-size: 12px;
+        text-align: center;
+        padding-top: 20px;
+        margin-bottom: 17px;
+    }
+    .footer__br{
+        display: none;
+    }
+    .footer__pic{
+        width: 79px;
+        margin: 0 auto;
+    }
+}
+
+@media(max-width:400px){
+    .indent {
+        padding-top: 52px;
+    }
+    .header{
+        top:26px;
+    }
+    .header__wraper{
+        height: 43px;
+        margin-bottom: 9px;
+    }
+    .header__btn-line{
+        width: 17px;
+        margin: 1px 0 3px;
+    }
+    .header__logo {
+        margin-top: 9px;
+    }
+    .header__logo img{
+        height: 30px;
+    }
+    .header__btn {
+        margin: 18px 9px 6px 9px;
+    }
+    .header__cross-line-1, 
+    .header__cross-line-2 {
+        width: 20px;
+    }
+    .header__cross.header__cross-active {
+        top: 13px;
+    }
+    .main__mob{
+        right: 31px;
+        top: 190px;
+    }
+    .modal__bg {
+        background:none;
+    }
+    .modal__window{
+        margin-top: 0;
+        height: 100%;
+    }
+    .main {
+        height: 215px;
+    }
+    .main__titel {
+        padding-top: 28px;
+        margin-bottom: 10px;
+    }
+    .main__mob {
+        top: 153px;
+    }
+    .main__text{
+        margin-top: 8px;
+    }
+    .arrears__title, .fine__title, 
+    .services__title, .tax__title {
+        font-size: 14px;
+    }
+    .tab__dropdown-arrow{
+        right: 12px;
+    }
+}
+@media(max-width: 380px){
+    .cooperation__pic{
+        width: 150px;
+    }
+}
+
+@media(max-width: 370px){
+    .main__text {
+        font-size: 12px;
+        max-width: 363px;
+        width: 100%
+    }
+}
+@media(max-width: 359px){
+    .main__text {
+        font-size: 12px;
+        max-width: 363px;
+        width: 100%
+    }
+    .modal__wraper {
+        width: 280px;
+    }
+    .modal__login, 
+    .modal__password {
+        width: 228px;
+    }
+    .modal__btn {
+        width: 279px;
+    }
+    .modal__btn a {
+        width: 200px;
+        padding: 13px 39px;
+    }
+    .cooperation__pic{
+        width: 120px;
+    }
+    .cooperation__img{
+        width: 80px;
+    }
+    .cooperation__text{
+        font-size: 10px;
+    }
+
+/*     .cooperation__wraper{
+        width: 160px;
+        margin: 0 auto;
+    } */
+}
